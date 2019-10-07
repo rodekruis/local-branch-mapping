@@ -1,11 +1,12 @@
 # local-branch-mapping
-Code and documentation for the local branch mapping project, in cooperation with the International Federation of Red Cross and Red Crescent Societies (IFRC).
+Code and documentation for the local branch mapping project, a cooperation of 510 and the International Federation of Red Cross and Red Crescent Societies (IFRC).
 
 ### Objectives
 The technical goals of the project were to build tools and methodologies to automatise the following operations:
 1) Extract locations of local branches of a given Red Cross National Society (NS) from the web.
 2) Extract information on those branches (contacts, capacity, activities).
 3) Compare and contrast this information with (1) the relevant needs of the given country and (2) the [IFRC's strategy](https://future-rcrc.com/).
+
 The tools described belowed were built and tested studying 4 pilot countries:
 1. Malawi
 2. Guatemala
