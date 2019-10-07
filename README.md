@@ -5,7 +5,7 @@ Code and documentation for the local branch mapping project, a cooperation of 51
 The technical goals of the project were to build tools and methodologies to automatise the following operations:
 1) Extract locations of local branches of a given Red Cross National Society (NS) from the web.
 2) Extract information on those branches (contacts, capacity, activities).
-3) Compare and contrast this information with (1) the relevant needs of the given country and (2) the [IFRC's strategy](https://future-rcrc.com/).
+3) Compare and contrast this information with (1) relevant needs of the given country and (2) the [IFRC's strategy](https://future-rcrc.com/).
 
 The tools described belowed were built and tested studying 4 pilot countries:
 1. Malawi
@@ -20,14 +20,14 @@ The data sources investigated during this project were the following:
 2. [UNdata](http://data.un.org/)
 3. [World Bank Open Data](https://data.worldbank.org/)
 4. [FDRS](http://data.ifrc.org/fdrs/)
-5. Specific datasets obtained from the NS.
-6. Social media (Facebook and Twitter)
-7. Google Maps
-8. OpenStreetMap
+5. Specific datasets obtained from the NS
+6. Social media: [Facebook](https://www.facebook.com/) and [Twitter](https://twitter.com/)
+7. [Google Maps](https://www.google.com/maps)
+8. [OpenStreetMap](https://www.openstreetmap.org)
 9. [GDELT](https://www.gdeltproject.org/) (database of events, locations and organisation built from newspapers)
-10. National and regional online newspapers.
+10. National and regional online newspapers
 11. NS' website(s).
-#### Source selection
+#### Source Selection
 After reviewing the above sources, the sources #6, #7, #8, #10 and #11 were selected as most relevant and included in the following analysis.
 First observations:
 * Social media: contain information on locations and activities of some local branches
@@ -43,11 +43,12 @@ The other sources were discarded for the following reasons:
 * Source #5 was concluded to be out-of-scope, as it is impossible to automate the analysis of an arbitrary, possibly unstructured data set.
 * Source #9 was found to contain little information on RC local branches, as it is built mostly upon content produced by major international news agencies.
 
-### Data collection
-This respository contains scripts to perform the following operations:
-1) Search and download social media content: account/page information, posts (Facebook and Twitter).
-2) Search and download geolocations from Google Maps.
-3) Search and download geolocations from OpenStreetMap.
-4) Search and download a list of addresses from a website.
-4) Merge the above information (1, 2, 3 and 4) and assign a best estimate forthe location of each.
+### Data Collection
+Data was collected from the aformentioned sources using the corresponding APIs (Application Programming Interfaces). Python scripts were developed to query and download data in an automated fashion; they can be found in the following directories, together with documentation on how to run them:
+* collect_social_media_data
+* collect_google_maps_data
+* collect_openstreetmap_data
+* collect_local_news
 
+### Data Analysis
+The data analysis aims at solving essentially two problems: 
