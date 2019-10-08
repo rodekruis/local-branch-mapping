@@ -2,6 +2,6 @@
 
 Script to search for a given place (e.g. "red cross") in Google Maps.
 
-Execute with `python googlemapsscrapping.py`.
+See presentation (`How to search on Google maps.pptx`) for high-level explanation.
 
-See in-code comments for parameter configuration.
+Execute with `python googlemapsscrapping.py`; see in-code comments for parameter configuration.
