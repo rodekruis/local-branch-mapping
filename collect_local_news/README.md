@@ -109,4 +109,4 @@ optional arguments:
 ```
 TBI: automatize the process with a classification algorithm, too few data so far.
 
-author: Jacopo Margutti, 2019
+Author: Jacopo Margutti, 2019
