@@ -1,4 +1,4 @@
-# Scrape Newspapers
+# collect_local_news
 
 A set of scripts for scraping news articles from national and local newspapers.
 
