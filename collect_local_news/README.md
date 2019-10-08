@@ -1,6 +1,6 @@
 # Scrape Newspapers
 
-A set of scripts for scraping news articles and extracting impact data
+A set of scripts for scraping news articles from national and local newspapers.
 
 ## General
 
@@ -107,110 +107,6 @@ optional arguments:
   -r, --recreate-summary-file
                         Recreate the summary file
 ```
-TBI: automatize the process with a classification algorithm, too few data so far
-
-## Get impact data
-
-Analyze the relevant articles and extract impact data. As input, takes
-the file containing all of the relevant article text. The analysis is
-divided into several components, as follows:
-
-#### get_impact_data.py
-Takes arguments from the command line, reads in the configuration
-file and creates an `ImpactTableGenerator` instance,
-which it uses to loop over the articles.
-
-#### ImpactTableGenerator.py 
-
-The `ImpactTableGenerator` class contains all of the high-level
-information shared between articles that is necessary for 
-evaluating their relevance. It consists of:
- - a dataframe containing all of the article text
- - a list of country locations from the 
-    [National Geospatial Intelligence Agency](http://geonames.nga.mil/gns/html/namefiles.html),
-    read in from `locations/{country}/{country_short}.txt`
- - a dictionary of keywords from the configuration file
- - an output dataframe
- - the loaded spAcy model
-
-From an `ImpactTableGenerator` instance, it is possible to call
-`loop_over_articles`, which creates and calls `analyze()` on an
-`Article` instance for each of the relevant articles.
-
-#### Article.py
-
-The `Article` class constructor cleans up the article text, performs preprocessing
-on numbers and person titles, and then tokenizes the text with spAcy.
-It also determines a most probable location for the article.
-The `analyze()` method then loops through all the sentences of the article,
-calling `Sentence.analyze()` on each one, and appending the returned
-impact data to a list which is then used to add information to the impact dataframe.
-
-#### Sentence.py
-
-The `Sentence` constructor strips newline characters from the text,
-and tries to determine a best location for the sentence. The `analyze()`
-method then checks for two types of impact information. First,
-an `Ents` instance is created and analyzed, and next the sentence
-text is searched for infrastructures.
-
-#### Ents.py
-
-An `Ents` instance is meant to consist of any tokens that are
-cardinal numbers or money. With some spaCy models, this can
-be achieved by selecting the corresponding entities, however
-when those are not available, all `NUM` tokens and / or digits within
-a sentence are selected.
-
-The entities are then looped through in the `analyze()` method,
-checking whether each entity is money, otherwise trying to determine 
-which object it refers to. Finally, a location is assigned to the entity.
-
-#### Usage
-```
-get_impact_data.py [-h] [-i None] [-o None] [-d None] config_file
-
-positional arguments:
-  config_file           Configuration file
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -i, --input-filename
-                        Optional input filename
-                        (default: articles_all_topical_{keyword}_{country}.csv)
-  -o, --output-filename-base
-                        Optional output filename base
-                        (default: impact_data_{keyword}_{country})
-  -d, --output-directory
-                        Optional output directory
-                        (default: impact_data)
- ```
-Output: .csv and .xlsx files with the following structure :
-```
-[index=['location', 'date', 'newspaper'], columns=['damage_livelihood', 'damage_general',
-                                                    'people_affected', 'people_dead',
-                                                    'houses_affected', 'livelihood_affected',
-                                                    'infrastructures_affected',
-                                                    'infrastructures_mentioned',
-                                                    'sentence(s)', 'article_title']]
-```
-
-#### End-to-end test
-
-The file `articles_processed/tests/articles_test_inondation_Mali.csv` 
-contains some article examples that are used for an end-to-end test.
-The test can be run by executing `pytest` in the `scrape_newspapers`
-directory.
-
-The expected output file is 
-`tests/impact_data_test_inondation_Mali_prev.csv` and the output
-produced by your current version of the script will be named
-`impact_data_test_inondation_Mali_new.csv`. The test will simply
-tell you if the two output files differ.
-
-You may sometimes make changes that improve the output results,
-in which case you can move the `new` file to the `prev` file
-and commit it to git. Also, please add any funny edge cases to
-the list of example articles. 
+TBI: automatize the process with a classification algorithm, too few data so far.
 
 author: Jacopo Margutti, 2019
