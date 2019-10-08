@@ -57,3 +57,5 @@ Code and methodologies developed to perform data analysis is stored in 3 separat
 1. `merge_locations`: merge locations from social media, Google Maps, OpenStreetMap and the web to assign a best estimate for the location of each local branch
 2. `extract_topics`: extract topics from social media content
 3. `map_to_2030`: map social media content and news articles to the IFRC's strategy 2030, according to the dashboard mockup
+
+Authors: Jacopo Margutti, You Hu, Anna Pechina (2019)
