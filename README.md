@@ -50,6 +50,7 @@ Data was collected from the aformentioned sources using the corresponding APIs (
 * collect_google_maps_data
 * collect_openstreetmap_data
 * collect_local_news
+* collect_addresses_from_web
 
 ### Data Analysis
 The data analysis consisted in 3 separate tasks:
