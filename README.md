@@ -5,7 +5,7 @@ Code and documentation for the local branch mapping project, a cooperation of 51
 The technical goals of the project were to build tools and methodologies to automatise the following operations:
 1) Extract locations of local branches of a given Red Cross National Society (NS) from the web.
 2) Extract information on those branches (contacts, capacity, activities).
-3) Compare and contrast this information with (1) relevant needs of the given country and (2) the [IFRC's strategy](https://future-rcrc.com/).
+3) Compare and contrast this information with (1) relevant needs of the given country and (2) the [IFRC's strategy 2030](https://future-rcrc.com/).
 
 The tools described belowed were built and tested studying 4 pilot countries:
 1. Malawi
@@ -14,7 +14,7 @@ The tools described belowed were built and tested studying 4 pilot countries:
 4. Netherlands
 
 ### Data Sources
-#### Introduction
+##### Introduction
 The data sources investigated during this project were the following:
 1. [HDX](https://data.humdata.org/)
 2. [UNdata](http://data.un.org/)
@@ -27,7 +27,7 @@ The data sources investigated during this project were the following:
 9. [GDELT](https://www.gdeltproject.org/) (database of events, locations and organisation built from newspapers)
 10. National and regional online newspapers
 11. NS' website(s).
-#### Source Selection
+##### Source Selection
 After reviewing the above sources, the sources #6, #7, #8, #10 and #11 were selected as most relevant and included in the following analysis.
 First observations:
 * Social media: contain information on locations and activities of some local branches
@@ -37,6 +37,7 @@ First observations:
 * OpenStreetMap: contains locations of some local branches; less populated that Google maps.
 * National and regional online newspapers: contain information on some local branch activities; difficult to unambigously associate one activity to one specific local branch, if not explicitely mentioned, but possible to guess by geographical proximity.
 * NS' website(s): can contain locations and contact information of local branches, but not for every country: among the pilot countries, only the Netherlands and Guatemala had a dedicated page with such information.
+
 The other sources were discarded for the following reasons:
 * Sources #1 to #4 do not contain any information on RC local branches.
 * Source #4 contains detailed information on the NS, but little on local branches (only the total number of them).
@@ -51,4 +52,11 @@ Data was collected from the aformentioned sources using the corresponding APIs (
 * collect_local_news
 
 ### Data Analysis
-The data analysis aims at solving essentially two problems: 
+The data analysis consisted in 3 separate tasks:
+1. Merge locations from social media, Google Maps, OpenStreetMap and the web to assign a best estimate for the location of each local branch
+2. Extract topics from social media content
+3. Map social media content and news articles to the IFRC's strategy 2030, according to the dashboard mockup
+Code and documentation relative to these three tasks can be found, respectively, in the following directories:
+1. merge_locations
+2. extract_topics
+3. map_to_2030
