@@ -6,4 +6,4 @@ See presentation (`How to search on Google maps.pptx`) for high-level explanatio
 
 Execute with `python googlemapsscrapping.py`; see in-code comments for parameter configuration.
 
-Author: Anna Pechina (2019)
+Author: Anna Pechina, 2019
