@@ -26,7 +26,7 @@ The algorithm is divided in 3 separate steps:
 
 ### Facebook
 Get familiar with the [Facebook Graph API](https://developers.facebook.com/docs/graph-api/) and register your app.
-The algorithm is divided in 2 separate steps:
+The algorithm is divided in 3 separate steps:
 1. `get_facebook_data.py`:
     1. get facebook public pages matching the target names and countries (as defined in `pilot_countries_metadata.xlsx`)
     2. download the pages' info all their public posts as json in directory `facebook_data`.
