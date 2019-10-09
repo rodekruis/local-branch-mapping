@@ -13,7 +13,7 @@ The file `pilot_countries_metadata.xlsx` contains some information used to defin
 N.B. it is necessary to edit and/or add a new row in this file if new or different countries want to be analysed.
 
 ### Twitter
-The twitter scripts can be found in the corresponding directory.
+Get familiar with the [Twitter API](https://developer.twitter.com/en/docs/basics/getting-started) and register your app.
 The algorithm is divided in 3 separate steps:
 1. `get_twitter_ids.py`: get twitter ids and user names matching the target names and countries (as defined in `pilot_countries_metadata.xlsx`)
 2. `get_twitter_data.py`:
@@ -25,7 +25,7 @@ The algorithm is divided in 3 separate steps:
     3. save dataframe as csv in directory `twitter_data_processed`
 
 ### Facebook
-The facebook scripts can be found in the corresponding directory.
+Get familiar with the [Facebook Graph API](https://developers.facebook.com/docs/graph-api/) and register your app.
 The algorithm is divided in 2 separate steps:
 1. `get_facebook_data.py`:
     1. get facebook public pages matching the target names and countries (as defined in `pilot_countries_metadata.xlsx`)
