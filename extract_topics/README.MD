@@ -1,4 +1,4 @@
-# social media topic 
+# extract topics from social media
 ## Context
 
 This project is meant to provide an approach to measure how many posts are about given topics in countries.
