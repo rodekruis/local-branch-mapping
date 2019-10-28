@@ -1,19 +1,11 @@
-### Geolocation correction 
-
--------------------------
-
-
-#### new version
-Folder:`phases/geolocation_correction`
-
-*Warning: be careful about path; files moved before*  
+## Merge Locations (Geolocation Correction) 
 
 What we have now:
 * Name of social media, addresses and geolocation  from social media,  metadata, feeds
 * Name of red cross on google map, addresses and geolocation from google map search, contact info
 * Name of local branch from web sites,  addresses(geolocation get from google map) 
 
-The idea is to merge them according to the semantic meaning of names from different sources(social media, web scraping, google maps)
+The idea is to merge them according to the semantic meaning of names from different sources (social media, web scraping, google maps)
 
 <img align="center" src="report_sources/semantic_merge.jpg" width="500" />
 
@@ -25,27 +17,30 @@ Now since we have geolocation from three sources and none of them are not able t
 
 We used voting to decide which geolocation we should thrust, the voting is consist of two steps:
 * First, find the closest two as majority
-* Second, pick one within the closest pair with thrust chain: GMaps>Social media> Web scraping
+* Second, pick one within the closest pair with relative trust: GMaps > Social media > Web scraping
 
 <img align="center" src="report_sources/decision_making_semantic.jpg" width="500" />
 
 When we calculated the distance, we also take the similarity of address in to consideration and reduce the distance by the similarity of addresses in the pairs.
 
-In the end, for each local branch social media(Facebook and Twitte), we assign a most reliable geolocation and address to it. 
+In the end, for each local branch social media (Facebook and Twitter), we assign a most reliable geolocation and address to it. 
 
 ------------------------
-#### old version
+
+### Evaluation
+
+Folder:`evaluation`
+
 In this phase, it will be divided into few steps:
 * Get the Geo location of each candidate address
-* Evaluate the performance and compare to alternative approach(GMaps approach) 
-* Correct addresses on social media by two data sources
+* Evaluate the performance and compare to alternative approach (GMaps approach) 
 
-In notebook `pilot_scraping/NL&GT/Integration_GM_SM_WC.ipynb`, we used Google API to get the Geo location of each address and saved them into `pilot_scarping\NL&GT\nl_result_full_name.csv` and `pilot_scarping/NL&GT/gt_result_full_name.csv` with columns address name, latitude, longitude and name returned by Google map API.
+In notebook `evaluation/Integration_GM_SM_WC.ipynb`, we used Google API to get the Geo location of each address and saved them as csv with columns address name, latitude, longitude and name returned by Google map API.
 
 And then we exported all Geo location of local branches provided by their map interface and saved them to file `correct_nl.csv` for evaluation. In evaluation stage we will call this data set as TRUE data set.
 
-Now we have all three Geo datasets: GMap, Web scraping and social media(for NL case we have TRUE dataset). We made simple visualization of two countries.
-The files are `pilot_scarping\NL&GT\GT_visualization.html` and `pilot_scarping\NL&GT\NL_visualization.html`.
+Now we have all three Geo datasets: GMap, Web scraping and social media (for NL case we have TRUE dataset). We made simple visualization of two countries.
+The files are `evaluation/GT_visualization.html` and `evaluation/NL_visualization.html`.
 
 Before the evaluation, there are few things need to talk about.
 
@@ -82,69 +77,3 @@ This shows that web scraping approach has better performance in general and we h
 However, this evaluation is based on the assumption that the information of TRUE data set is correct and complete(actually not, there are some errors and missing points, but in general they're correct).
 
 The last step is to assign a Geo location to each social media to correct the addresses written on their pages. Considering GMap data set is still useful, the way we assign a Geo location is to choose the closest point in both two data set. 
-
------------------
-
-## How to use the pipeline
-
-When you want to apply this whole system to other initial sites, you need to follow the instruction of pipeline.
-
-The whole pipeline is consist of two components:
-* Scraping module
-* Data processing
-
-### Scraping
-
-To apply scraping module to other countries, you can edit file `pilot_info.csv`, by adding country codes(compatible to NGA country code) and URL of the home pages.
-
-Then type command line `scrapy crawl pilot_scraping` to start the scrapy engine. The data will be stored in fold `corpus`.
-
-PS. I do recommend to slice the the list of contries into multi groups and used multiple threads to run parallelly when you have lot of countries to query.
-
-The detail can be refered to section [*Collecting web pages*](#collecting-web-pages)
-
-### Data processing
-
-Folder:`pipeline`
-
-***Strong Warning**: be careful about path; files moved before*  
-
-
-Before start, be sure the data from National Geospatial-intelligence Agency (NGA) is placed in somewhere, you can download it from [Google drive ](https://drive.google.com/open?id=1clS9nLTiJxgurex9wcPSsOwzGJTgSxVq)
-
-To make it more flexible, we implemented all the required functionality into functions in notebook `local-branch\pilot_scarping\NL&GT\Pipeline.ipynb`
-
-The whole pipeline is split to four main functions(in order to make customization):
-* `identify`: identify the target page of each initial society
-    * Parameters:
-        * query_file: the path of file `pilot_info.csv`
-        * corpus_dir: the path where all collected page sources stored
-        * location_dir:: the path where NGA location folder placed
-    * Return value(s):
-        * A dataframe with field: country code; page id of target page; URL or target page
-* `extact_address_name`: extract addresses from (one) target page
-    * Parameters:
-        * file: the path of source file of target page
-        * api_key: the API key of Google service platform
-        * country_code: A two alphabetic character code from the [Geopolitical Entities and Codes (formerly FIPS 10-4 standard)](http://geonames.nga.mil/gns/html/countrycodes.html)
-    * Return value(s):
-        * addresses_list: a list of addresses; each elements is a dictionary containing information of address
-        * name_list: a list of (possible) names of local branch; each elements is a dictionary containing information of "name"
-* `semantic_matching`: match the addresses to names by the semantic distance （time consuming)
-    * Parameters:
-        * addresses_list: a list of addresses; generated by previous stage
-        * name_list: a list of (possible) names of local branch; generated by previous stage
-    * Return value(s):
-        * A dataframe with field: address; semantic distance; candidate name; latitude of address; longitude of address; weight(indicate the similarity of address and name)
-* `correction`: use web and Gmap data to correct the geolocation of social media
-    * Parameters:
-        * social_media: dataframe read from file like "social_media_Netherlands.csv"
-        * social_media_extend: dataframe read from file like "page_info_Netherlands.csv"
-        * web: dataframe generated from semantic matching
-        * gmap: read from file like "GMaps_Netherlands.csv"
-    * Return value(s):
-        * A dataframe with field: facebook id; name; username; final address; final latitude; final longitude; Twitter id
-    * N.B.
-        * User need to read dataframe ahead as the format and field of dataframe is not fixed
-
-Easy way to use: change the variables on sources block to what you want
