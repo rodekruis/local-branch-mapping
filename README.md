@@ -1,9 +1,7 @@
 # local-branch-mapping
 Code and documentation for the local branch mapping project, a cooperation of 510 and the International Federation of Red Cross and Red Crescent Societies (IFRC).
 
-Authors: Jacopo Margutti, You Hu, Anna Pechina
-
-Project summary: 
+Authors: Jacopo Margutti, You Hu, Anna Pechina (2019)
 
 ## Objectives
 The technical goals of the project were to build tools and methodologies to automatise the following operations:
@@ -61,5 +59,3 @@ Code and methodologies developed to perform data analysis is stored in 3 separat
 1. `merge_locations`: merge locations from social media, Google Maps, OpenStreetMap and the web to assign a best estimate for the location of each local branch
 2. `extract_topics`: extract topics from social media content
 3. `map_to_dashboard`: map social media content and news articles to the dashboard mockup
-
-Authors: Jacopo Margutti, You Hu, Anna Pechina (2019)
