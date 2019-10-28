@@ -1,0 +1,38 @@
+<!DOCTYPE html><html>
+<head>
+    <title>CAS &#8211; Central Authentication Service</title>
+    <meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/><link type="text/css" rel="stylesheet" href="css/uva.css"/><link rel="icon" href="/cas/favicon.ico" type="image/x-icon"/><title>Login</title>
+</head>
+
+<body id="cas">
+<div id="content" class="center">
+        <div id="header">
+    <h1 id="app-name"
+        style="background-color:#bc0031;">UvA Login</h1>
+</div>
+        <form method="post" id="fm1" class="fm-v clearfix">
+    <div class="box" id="login">
+        <div class="row">
+            <label for="username"><span class="accesskey">U</span>vAnetID:</label>
+            <input type="text" id="username" class="required" maxlength="16" size="8" tabindex="1"
+                   accesskey="u" autocomplete="off"
+                   autofocus="autofocus" name="username" value=""/></div>
+        <div class="row">
+            <label for="password"><span class="accesskey">P</span>assword:</label>
+            <input type="password" id="password" class="required" maxlength="64" size="32" tabindex="2"
+                   accesskey="p" autocomplete="off" name="password" value=""/></div>
+        <div class="row btn-row">
+            <input type="hidden" name="execution" value="e3d731a6-03a8-400c-94cc-e6cd6aaa326b_ZXlKaGJHY2lPaUpJVXpVeE1pSjkuZHpKTlVFaENZazVKU2tRMk9WZHZVbTl1Y2pnclIwaGtWMW93Tm5KMGRrdDRWRXhJZFU1M2QwMXljVWRKVEVselkwdHNkak5YUVhSWFpYazVhbGx2TlcxTFdGUXJXWEU1Ylc1RFdVeFlRVzFVYVdSV1R6QnVNVlpIWmpBMllYTkhXVzVVYldNck0wODFUVVZ4U2sxc01tUjZSR1J0Y3pjM1NDdFBUWE5NY3pkRU1UY3JaazgzZWpkRFNrUlJTbnB5WlVzeVRuZzNNRmh1ZEVOR1dqaE9XR0lyYkdSU01DOVBZV050TDFoc1VtRnVSR3MwVVRSYWRIZEJSazU1UW5RMWRUTnhLM2N5U1hrNFNGVnBOa0ptUWs5U1NrSkRTVXBZUjJsR1RWRm9jbkYwVVU5NVRuRnZORk0zVVdoNVpVbExjSGxzVUZwdllrSkJURlZ6Vmtwd2RrOW1Nek01UTFnMVdFMXZLMEoyWW05bE9UTkNlRFZ5YzBWc1YxZzBkalpZVEVaNU5HUkZZVmhuVW5reVVFbFJjblZPYkRKMlRYWXZOVXhLYjFwa1VHRk9lbTVxTDJaRFEwNVdXUzgwWmxrM1VqWnBRelpHVDNSSVl5dHJTVWRoVkVOM1ltRlJNRmRMTTFkcmRqTXJUbk0yYzBWNU5GWktibEZNVkZBMlVGWlVkelp1TkVRclIybEpNMkZUY1RGblV6WXZkbEU1UTFGVVQwWjJjbFV2TUZGbFFsUTRhVlpTV1haMVJrOWFRbTh4YkVsS1lrOXFUR0p5YXk5aFUycHZlSGRxVG13ME5HeFJhVEZMYkdGUlJEQnJSVWhrYlZGWllWSjNWbGg2ZEdFNFlTOWtkRTFSWWxKVGNqVkpVRTVNYlRKU1ZVRjRlSGxaYUc5bk5qSkpiMUkxUWtwYVJGTTRTbVJpVUZsNU9FcDNiMVZEWnpkdk0zRktNM2R2WmtWd05FbFFaVzlPV0M5R0syRjBUV3NyUlhocVdUVm5UMVI1TldGc1FXdEdOMjVWTkVKdmVGZHRMemRrYmpJME1HNUxSMHhvZEV0cVZ6ZERWV0Y2ZVZWTGFEUjJVVU40WVc1QlYzUTRTRFo1V0hGeGRsTmtRV3RSU1ZCdFRTOWpWekJzUVhwemIwUk5hVTVIT1hwTVJUSnNXVEJyVWxCQ2NXWkdVVkJxVkc1MFQzTk1UbGxRUm1KU2JuWllZamR0U0Zac0wydHZUVTUxY1doSFEzZEdjbGhqWkhSbWNWcG1jWE4wTlZoclkyRjBlVWd4UWxaTFkyMXlZWGh4VW5kWWRHRmFNQ3RTYTNweWMwVmxlWFJMVTNNMWNXUlZjSHBwWmt0cVluSjBXVGQ1WkZBM2FUWTRXR04xU0d3d2FXaFhZazl6YWtaUFZuQTRjSEE0T1hZd1RIZFBVVEp2UTNwSWJuSXdhMU41TDBWcVluSlVhazh3VTNGMFIyeHFVRlJYYW5acmRtbGplVTVzY205S1JHaFVVSEkzWWl0emVUQm5TVUpwVDA5SFVHc3lhWEpDVDNsdFNGSnNWMGRvVVhadGVUWlRPRFIzYlhvelNqWjZiVmxFYWpOb1JYcG5RMkpGTm5OVmJrVlRaMHBhU21SelQzSmxiRWxvVVhab05TOVViRkI1VldsWlQzQjFRM2RtU1RGek9XMUJaekJhYkVVdlkxRklOMFJZZG1WSE4zZERVa2h3ZUVaV2MzcFZja2haYTNKR1VUVnBlbTk2YzNackwwaEJPRTVzYXpaWmRVRjFPRU4wUVZkVVFXeHRSR2RNVUU1dFdWTndSV1ZaY1VWT1kwVXJla0pUYWtodlduTmpjV1ZET0dSSWNEbExjakppU0VWR2JVbE5OVXc0WW5GRFlYSlBWRFpaZW5WR1JUTnZWRTloWjBJeVNVMVJheXRMYzFsclpsWnNVa3BrU0dwS05uRmxWR2g0VkRadlZVb3dNbkpEY2sxRFdWaFZTa1pzYjJKTVoydFhPRkZITldvcmRFcFJObXBoVHpVeFJuQk9iV3N3ZVU1dU5WWTJjSGd3VlhONVIxUmhWVmwxVFdWUkwwcEZUVFZLVjFneU4xSXpTa015VmpaM1dXMVJkM2g2ZHpOSGVYaHdTR3BpV1M5NmQweHFNM0J2VTJ4SFlsQnhia2g1Y2pJeE1EY3ZXRWh4VkRablVqSmFielJHTjNCd1dubGlhak5RVlVkUk0xTXlaVUpUV21GWk1URkRkMDVXVUVWdkswZEdWMFYwYmpreldUSkNhVXR6Y1RWQksyY3pTWFJ1WlhscFZVa3Jaa2MyTVdVeWJtNXZkbXhGTDJ4c00wcHBUM1JtZDI1NU1WbzNVbW95VDJKNE1WSTRSVFJUYkcxRFpsbEVZU3RIVVdOQ1dGcHRWbk5vTm5SMGJrUmtUaTlOSzFoUWNFazFObFpXYTBSdGQySnZaR0lyTlhRdlNtTlNjV0Y1UzJobmJIZGxWMk5tYVVvd2FXSmFWalZKU25aU01sTmhSRVJPV2xKbFFrVm9NMmR3Y0U5cFp6TkZjeXREU2pNcllUVnZiREU0WkZsbFlsSlhNeXM0UlZodlptaGhjRW8xVUV3eVZrc3lPVzVvWWxRM05XcE5OMDFuTjBKeU5HTTRORXRGWm01Sk5XRk9WbEF6TVUxNlUyWmlWek5qTlVwd2F6azRZMUpDYm5Cb1MzUnpUVkZVTHpCdFMydzFVSHAxWldoaFdFMVVUVUo2VG5vMmNsSnZhR3RHUm05Q1ZUQXZWMWxSWTNwMVlXaG5kRVJ6UlhWS1RFbGtWMU14WTJ4RFRuUmhjbE14WWpNdlRsTXhhbWxOV0doYVJUZFpPREJOWlVaRVJGZHpXbFJtY0RkeFUwYzVOMWxxYldSWmFFUkNOM0IzZUZvdmVrOVZjak1yVm5OaEwyaG9jbUpXY0RVd1kwdzRWblpWTmpSdVZXTlhjR1F4YkV0R1N5dHBRbUZ5Y2sxYU5rdzBSVTkwY0dsS1dIbGxUWEZHWmtZM1J6ZENWR3QzZUhKWVdTOVNUMmt3TDFwS2FGbHRTMHRyY1U0elNYUnplamhDVUhKdVRXWm5SVGRyT1dsRFJGWjVSMVJoYkcwMVRGcHNlbmRITHpsVmJUaE5iMmRMU0ZKMWIzWllZWEEzTm5OWVYzcEJiMFJxVDNkMFZUVjVaSEp1WWxaNlUxWkNNa05wU2s1d1ZUZEpRek5sVGxweU1uQXphRTVJT0hGWWFsVkJTeXR4ZDBWUGRXa3dWbVl6VFRKbGNqZ3pjRVJSUldWYVRVcGlXbTUzTURGSVp6VndWazlzWmtSalZHTTJSM3BhV21oMWJ6bDVTMGRJVmpoRVRWWm9kMlJwTjJSa1F6aHBka2RXYzI5U2FqaHBabUl6WlV0aFVHeHdWV3BJWTBsSmRtOXJjMGxtTUhST2JXRmFTMHg1U2t0SFRIcDJNV2ROZGtKVVYwSXJObXhFV0M5VFVVbFNNR015WmxOMWEySjBNVUl6V2xFMk5XTm1XRmxrWlVSclVqSmhTM0pPVFRSbFVHSlFWbVozZVhkMGF6UjBTbHBsTVVkT2RVRkNTRFZEUkhKeUwwaDBUMHRUVWtkdE5rUmtOa3cwT1dOamNWRjFiR1Z0ZVZNMlFYQnNWMGRLTDFkSGFreFFiMXBZVGxSUFJYWjRaVzVXVEROalNIRnhTMng0VERGaE4wSjZXamh2UnpCM0swdG9OemsxWnpkeFJIWnNMMkZDU214aVYwMXhZblpTVG1sVWRVWlVWVXR3VXpSbE9HaFBVMjV5YzNFMVFuVldUVEZvVm01d01HdHRjemRKYzBSSmNuWTNjSGx6Ykc1dmQzaFNUVEI0ZDNSSFNGTXljRFZ0Vmtkc1ltSmxhMUJCY2xWR2EwNVRlRzFvYVRKME5IcElVVTEzUVZOcWJGa3pSVUkyZFRaMFduZGpMM3BGTlhsNFltWkdhRVpuY21WM05YRmhkVkZDVkdnd1VrUnFiM2d4ZWk5V2FWSldNV2xXYm1rMWNXcDZSVXRNZWxCa2NHWk1PV3A1YjBjNFZsTkNkME15V1RGbGJrbHRVVXhsUlRoSUwySmFRVFp0WlZFMmNVTlFjQzkxYWtnMVEyTkpVekZGVjFCelQyNW5WVzlUTUhKVmNXTnZVa2h0ZWtJNFVqTlNObE5WVVVoUWRtZGxXRVpKZUhSUFZXbFlUREU1YjBaT1RHWndRVXQxVTFGTmQyNDBVMmxvVmtOeFIwZFVWRlZyYm5KU2NXeHpXRmR4ZG0xbmJXbEVPR0ZYYjA5UU0zSjNjR1ZMUmtWRlNUUnNTV1ZzYWxSWmVIbDBNVVF3YVRSNlMzRmpiWEpMUmtrMFZVcEdPSHBoTm5CNVdrbDRXbGRQV0d4WFlVRnhkME53ZG1KdmVVdHVaVXcwWnpaRFlrUm5Nek51VUVoS2IzbFVXWFl2YmpSc05rNTRabmRSTmtaTUwwMTBNbU5SZVRSWE56RTNTbFVyTVdwTk5ERTFjazlHY25KdGNuRmxTVFIxU201R09YZERMM1owY2pOVGJUazFVbGR1VWtObWFUQkpkVTV3VG5WRmNFNXhURnBDVUVSTmJXMUlVUzkxT0dSaU5XOHlZWEYyZUU1Tk4wWmxjV3RRVm05bFExVTVOMEY0VHpWTFRVUjBNRUZOVGs5SlJqRklaRlJUZGpKSVVuQlFURGRwWVhOVGQzQlFWWE5JTkhoRGREUnFSWE0wVFhSSVJWWkdTMWs0ZVVNM2NXNVJSU3RoUlROTlRWcFFUemRUTTNWVVZEbHhPVkl3VTFSRGJEQTRRVXB6T0dab1JEVlRkVnBXT0VkSVNXMWFRV1ZNU2pSRE5FcDNZVE56UW5GVWRVbHZWWEZsZDNsamJVcE9OV1ZpYjNwTFZHTk9Ta2gyWTBOaU1qTk5SRzlXVFZGcEwxSnZNbmg1UW1SSGJURjRUMFZzU1UxTE4zSnllWEk1Ym5KS1RHaG9WRWR3WXpRMlVrMTBSamQ1VERSc0szVjRkbFZFVlZkd2VESlBMMmxrTjFsRlp6QkdLeTgxWXpNMWJuZEVhVEYxUmxONWRGZEhOSEUzU2xOMFlWcG9jVklyYzJkT1FtcFZiRXR3YjBkQmVrVk1iVU5xY1dGV2REUnFiemhyWkhsSVZtWlJiMEpKU0RabGExWkhZV3R2VmpKV00xVkhaQ3RMZFUxR2QwdFdibmxwVGpKTGJHbGxRakkyYzFsUlVtOTRja281THl0YU9HWjJiak00TVRCYVUwTm9keTlLZFRJNVdTdFFXaTg1SzFWMGIwUnVWbTVFTUhnM1lsUldhRWRKVDBKbWIxRnZXa1ZaZWtvLm1RWVdBTHRSU1BCLTN6T19XWmgyenJGNHgyMHgwcVgxQTJ1SU9iNWJ6enBXY0h6SGZjU1hoX1dSSU1OdldZYml3ekF5LXNmR0JuUGk2Z091cWo0bVNR"/><input type="hidden" name="_eventId" value="submit"/><input type="submit" class="btn-submit" name="submit" accesskey="l"
+                   value="Login" tabindex="3"/></div>
+        <div id="info_password">
+            <span><a href="https://id.uva.nl">Forgot your password? </a></span>
+        </div>
+    </div>
+    <div id="sidebar">
+        <p>The information on this page is only accessible for visitors with a UvAnetID.</p>
+        <p>For security reasons, please log out and exit your web browser when you are done accessing services that require authentication!</p>
+    </div>
+</form>
+</div>
+</body>
+</html>
