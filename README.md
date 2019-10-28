@@ -3,8 +3,6 @@ Code and documentation for the local branch mapping project, a cooperation of 51
 
 Authors: Jacopo Margutti, You Hu, Anna Pechina
 
-Project duration: 6 months (May 2019 - October 2019)
-
 Project summary: 
 
 ## Objectives
