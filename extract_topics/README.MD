@@ -1,8 +1,5 @@
 # social media topic 
 ## Context
-~~To build a dashboard to monitor what local branches are doing according to their social media posts.~~
-
-IFRC periodically publishes topics/goals that we should work on in a period, and IFRC hopes to metric how much each Red cross societies devote into them and with what kind of form.
 
 This project is meant to provide an approach to measure how many posts are about given topics in countries.
 
