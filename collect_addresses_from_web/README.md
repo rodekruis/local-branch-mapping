@@ -19,6 +19,8 @@ According to those points, we choose most general, simple, non-country-specific 
 
 ### Collecting web pages
 
+Folder:`pilot_scarping`
+
 We use Scrapy as framework for data collection. 
 The most benefit of utilization of framework is the robustness to errors/exceptions.
 
@@ -63,6 +65,10 @@ Some important parameter settings:
 
 ### Identify target pages
 
+Folder:`phases/identify_target_pages`
+
+*Warning: be careful about path; files moved before*  
+
 The way we identify target pages is to calculate the "density" of location/address. 
 We tried many ways:
 * Named entity recognition: "The Netherlands is a good place" => [("the Netherlands","LOC")] =>1
@@ -91,6 +97,10 @@ For LE, they only list name of local branches. But it still shows, our solution 
 
 ### Extracting addresses
 
+Folder:`phases/extract_addresses`
+
+*Warning: be careful about path; files moved before*  
+
 After detecting target pages, we picked the HTML files of target pages for NL and GT, saved in `pilot_scraping/NL&GT/` as file `NL_html` and `GT_html`.
  
 In notebook `pilot_scraping/NL&GT/location_extraction.ipynb`, we first defined function `walker`. 
@@ -116,6 +126,10 @@ And then we applied it to Netherlands case.
 Comparing to the archived information stored on the website `https://www.rodekruis.nl/wp-content/plugins/superstorefinder-wp/ssf-wp-xml.php`, our method succeeded to get all addresses.
 
 ### Semantic matching
+
+Folder:`phases/semantic_match`
+
+*Warning: be careful about path; files moved before*  
 
 Now we have all possible addresses, but it only shows that there is a local branch, but we don't know which one it is.
 
