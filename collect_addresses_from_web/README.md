@@ -19,7 +19,7 @@ According to those points, we choose most general, simple, non-country-specific 
 
 ### Collecting web pages
 
-Folder:`pilot_scarping`
+Folder:`pilot_scraping`
 
 We use Scrapy as framework for data collection. 
 The most benefit of utilization of framework is the robustness to errors/exceptions.
