@@ -1,7 +1,10 @@
 # local-branch-mapping
 Code and documentation for the local branch mapping project, a cooperation of 510 and the International Federation of Red Cross and Red Crescent Societies (IFRC).
+
 Authors: Jacopo Margutti, You Hu, Anna Pechina
+
 Project duration: 6 months (May 2019 - October 2019)
+
 Project summary: 
 
 ## Objectives
